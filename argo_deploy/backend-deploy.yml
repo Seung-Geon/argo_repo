@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: boot-container
-        image: sg0040/jen_boot2:latest
+        image: sg0040/jen_boot2:1
         imagePullPolicy: Always
         ports:
         - containerPort: 7777
