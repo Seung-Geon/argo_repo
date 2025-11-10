@@ -17,11 +17,10 @@ spec:
     spec:
       containers:
       - name: boot-container
-        image: ys0915/argo_boot:1
+        image: sg0040/argo_boot:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 7777
-        # MariaDB ?°ê²°???„í•œ ?˜ê²½ë³€???¤ì •
         env:
         - name: SPRING_DATASOURCE_URL
           value: "jdbc:mariadb://argo-mariadb-ser:3310/calcdb"
@@ -29,7 +28,6 @@ spec:
           value: "root"
         - name: SPRING_DATASOURCE_PASSWORD
           value: "root1234"
-        # Health Check - Spring Bootê°€ ?•ìƒ ?¤í–‰?˜ëŠ”ì§€ ?•ì¸
         readinessProbe:
           httpGet:
             path: /health
